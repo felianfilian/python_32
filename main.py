@@ -5,12 +5,12 @@
 
 
 import smtplib
-import datetime as dt
+from datetime import datetime
 import pandas
 
-today_month = dt.datetime.now().month
-today_day = dt.datetime.now().day
-today = (today_month, today_day)
+today = datetime.now()
+today = (today.month, today.day)
+print(today)
 
 try:
     data = pandas.read_csv("birthdays.csv")
