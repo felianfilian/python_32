@@ -13,6 +13,8 @@ MY_MAIL = "peter@poto.lib"
 today = datetime.now()
 today = (today.month, today.day)
 
+test_date = (12,21)
+
 try:
     data = pandas.read_csv("birthdays.csv")
 except FileNotFoundError:
@@ -21,6 +23,8 @@ else:
     data.to_dict()
 
 new_dict = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}
+if test_date in new_dict:
+    print("working")
 print(new_dict)
 
 
