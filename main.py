@@ -21,10 +21,9 @@ else:
     print(data)
 
 #for row in data:
-print(data[row]["year"])
 
 my_email = "peter@poto.lib"
 
-now = dt.datetime.now()
+now = datetime.now()
 print(now)
 
