@@ -8,9 +8,10 @@ import smtplib
 from datetime import datetime
 import pandas
 
+MY_MAIL = "peter@poto.lib"
+
 today = datetime.now()
 today = (today.month, today.day)
-print(today)
 
 try:
     data = pandas.read_csv("birthdays.csv")
@@ -18,12 +19,9 @@ except FileNotFoundError:
     print("File not found")
 else:
     data.to_dict()
-    print(data)
 
-#for row in data:
+new_dict = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}
+print(new_dict)
 
-my_email = "peter@poto.lib"
 
-now = datetime.now()
-print(now)
 
