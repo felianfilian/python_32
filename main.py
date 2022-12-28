@@ -7,6 +7,7 @@
 import smtplib
 from datetime import datetime
 import pandas
+import random
 
 MY_MAIL = "peter@poto.lib"
 
@@ -24,7 +25,8 @@ else:
 
 new_dict = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}
 if test_date in new_dict:
-    print("working")
+    file_path = f"letter_templates/letter_{random.randint(1,3)}.txt"
+    
 print(new_dict)
 
 
