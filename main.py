@@ -30,7 +30,7 @@ if test_date in new_dict:
     file_path = f"letter_templates/letter_{random.randint(1,3)}.txt"
     with open(file_path) as letter_file:
         contents = letter_file.read()
-        contents.replace("[NAME]", birth_person["name"])
+        contents = contents.replace("[NAME]", birth_person["name"])
         print(contents)
 
 
